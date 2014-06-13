@@ -13,11 +13,11 @@ ESXi 5.5 machine images and a [Vagrant](http://vagrantup.com) box example.
 
 * [Vagrant plugin](http://www.vagrantup.com/vmware) for Fusion or Workstation
 
-* VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso
+* VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso
 
 ## Packer image builder
 
-You'll need a copy of VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso in this
+You'll need a copy of VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso in this
 directory, or add a valid url to `iso_urls` in `template.json`.
 
 To build the image, run the following:
@@ -51,7 +51,7 @@ the vagrant version sourced from this directory over NFS:
 
 ```
 $ vagrant ssh
-Welcome to VMware ESXi 5.5.0, up'd by Vagrant 1.3.4
+Welcome to VMware ESXi 5.5.0, up'd by Vagrant 1.6.3
 ```
 
 The same noVNC url above can used to view the console:
