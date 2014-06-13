@@ -5,16 +5,16 @@
         "O<wait>",
         " ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
-      "boot_wait": "15s",
+      "boot_wait": "12s",
       "disk_size": 20140,
       "disk_type_id": "0",
       "guest_os_type": "vmkernel5",
-      "headless": true,
+      "headless": false,
       "http_directory": "http",
-      "iso_checksum": "9aaa9e0daa424a7021c7dc13db7b9409",
+      "iso_checksum": "36dfcb269a20d7bfe7323f825128e1a8",
       "iso_checksum_type": "md5",
       "iso_urls": [
-        "./VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso"
+        "./VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso"
       ],
       "shutdown_command": "/bin/halt",
       "ssh_password": "vagrant",
