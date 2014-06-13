@@ -39,6 +39,7 @@
   "post-processors": [
     {
       "output": "{{.Provider}}_esxi55.box",
+      "keep_input_artifact": true,
       "provider": "vcloud",
       "type": "vagrant-vmware-ovf"
     }
