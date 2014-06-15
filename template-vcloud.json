@@ -30,9 +30,6 @@
         "memsize": "4096",
         "numvcpus": "2",
         "vhv.enable": "TRUE"
-      },
-      "vmx_data_post": {
-        "ethernet0.virtualDev": "vmxnet3"
       }
     }
   ],
