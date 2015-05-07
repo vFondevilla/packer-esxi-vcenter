@@ -11,10 +11,10 @@
       "guest_os_type": "vmkernel5",
       "headless": false,
       "http_directory": "http",
-      "iso_checksum": "36dfcb269a20d7bfe7323f825128e1a8",
+      "iso_checksum": "478e2c6f7a875dd3dacaaeb2b0b38228",
       "iso_checksum_type": "md5",
       "iso_urls": [
-        "./VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso"
+        "./VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso"
       ],
       "shutdown_command": "/bin/halt",
       "ssh_password": "vagrant",
@@ -22,8 +22,8 @@
       "ssh_username": "root",
       "ssh_wait_timeout": "20m",
       "type": "vmware-iso",
-      "vm_name": "esxi55",
-      "vmdk_name": "esxi55",
+      "vm_name": "esxi60",
+      "vmdk_name": "esxi60",
       "vmx_data": {
         "RemoteDisplay.vnc.webSocket.port": "6550",
         "cpuid.coresPerSocket": "2",
@@ -35,7 +35,7 @@
   ],
   "post-processors": [
     {
-      "output": "{{.Provider}}_esxi55.box",
+      "output": "{{.Provider}}_esxi60.box",
       "type": "vagrant"
     }
   ],
@@ -58,4 +58,3 @@
     }
   ]
 }
-
