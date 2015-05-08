@@ -1,4 +1,3 @@
-Vagrant.require_plugin "vagrant-esxi"
 
 esxi_box_url = "./vmware_esxi60.box"
 
@@ -33,14 +32,15 @@ Vagrant.configure("2") do |config|
     if node[:hostname].include? 'esx-'
       node_config.ssh.username = 'root'
       node_config.ssh.shell = 'sh'
-      node_config.vm.synced_folder '.', '/vagrant', disabled: true
+      node_config.ssh.insert_key = false
+      node_config.vm.synced_folder ".", "/vagrant", nfs: true
     end
 
     ["vmware_fusion", "vmware_workstation"].each do |provider|
       node_config.vm.provider provider do |v, override|
         v.gui = true
-        v.vmx["memsize"] = "2048"
-        v.vmx["numvcpus"] = "4"
+        v.vmx["memsize"] = "4096"
+        v.vmx["numvcpus"] = "2"
         # v.vmx["vhv.enable"] = "TRUE"
       end
     end
