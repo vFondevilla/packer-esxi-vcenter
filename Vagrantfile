@@ -1,11 +1,7 @@
 
-esxi_box_url = "./vmware_esxi60.box"
-
 nodes = [
-#  { :hostname => 'controlcenter', :box => 'gosddc/trusty64'  },
-  { :hostname => 'esx-01a', :box => 'esxi60', :box_url => esxi_box_url },
-#  { :hostname => 'esx-02a', :box => 'esxi60', :box_url => esxi_box_url },
-#  { :hostname => 'esx-03a', :box => 'esxi60', :box_url => esxi_box_url },
+  { :hostname => 'esxi55', :box => 'esxi55', :box_url => './vmware_esxi55.box' },
+  { :hostname => 'esxi60', :box => 'esxi60', :box_url => './vmware_esxi60.box' }
 ]
 
 Vagrant.configure("2") do |config|
@@ -29,11 +25,11 @@ Vagrant.configure("2") do |config|
   nodes.each do |node|
     config.vm.define node[:hostname] do |node_config|
 
-    if node[:hostname].include? 'esx-'
+    if node[:hostname].include? 'esx'
       node_config.ssh.username = 'root'
       node_config.ssh.shell = 'sh'
       node_config.ssh.insert_key = false
-      node_config.vm.synced_folder ".", "/vagrant", nfs: true
+      node_config.vm.synced_folder ".", "/vagrant", disabled: true
     end
 
     ["vmware_fusion", "vmware_workstation"].each do |provider|

@@ -6,24 +6,23 @@ ESXi 5.5 machine images and a [Vagrant](http://vagrantup.com) box example.
 ## Requirements
 
 * MacOSX with VMware Fusion or Linux with VMware Workstation
-
 * [Packer](http://www.packer.io/intro/getting-started/setup.html)
-
 * [Vagrant](http://docs.vagrantup.com/v2/installation/)
-
 * [Vagrant plugin](http://www.vagrantup.com/vmware) for Fusion or Workstation
-
 * VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso
+* VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso
 
 ## Packer image builder
 
-You'll need a copy of VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso in this
-directory, or add a valid url to `iso_urls` in `template.json`.
+You'll need a copy of VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso
+and/or VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso in this
+directory, or add a valid url to `iso_urls` in `esxi55.json` and `esxi60.json`.
 
 To build the image, run the following:
 
 ```
-$ packer build template.json
+$ packer build esxi55.json
+$ packer build esxi60.json
 ```
 
 While ESXi is installing, the console can be accessed using
@@ -39,11 +38,12 @@ ESXi guest support:
 $ vagrant plugin install vagrant-esxi
 ```
 
-The packer build created a Vagrant box named `vmware_esxi55.box` in this
+The packer build created a Vagrant box named `vmware_esxi55.box` and/or `vmware_esxi60.box` in this
 directory.  To bring up an instance of this box, run the following:
 
 ```
-$ vagrant up --provider=vmware_fusion
+$ vagrant up esxi55 --provider=vmware_fusion
+$ vagrant up esxi60 --provider=vmware_fusion
 ```
 
 The `provision.sh` script is run within the ESXi VM and changes /etc/motd with
