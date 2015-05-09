@@ -6,7 +6,7 @@
         " ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
       "boot_wait": "12s",
-      "disk_size": 20140,
+      "disk_size": 81920,
       "disk_type_id": "0",
       "guest_os_type": "vmkernel5",
       "headless": false,
