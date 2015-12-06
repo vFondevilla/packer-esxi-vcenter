@@ -1,7 +1,7 @@
 # Example Packer template and Vagrant box for VMware ESXi images
 
 This repository contains a [Packer](http://packer.io) template for building
-ESXi 5.5 machine images and a [Vagrant](http://vagrantup.com) box example.
+ESXi 5.5, ESXi 6.0 machine images and a [Vagrant](http://vagrantup.com) box example.
 
 ## Requirements
 
@@ -28,6 +28,15 @@ $ packer build esxi60.json
 While ESXi is installing, the console can be accessed using
 [noVNC](http://novnc.com?host=localhost&port=6550).  The port can also be
 changed with the `RemoteDisplay.vnc.webSocket.port` property in `template.json`.
+
+## ESXi 6.0 vCenter file
+I've added a .json file for creating a Virtual Machine via Fusion and uploading it to a vCenter server using vSphere packer post-processor
+
+To build the image, run the following:
+
+```
+$ packer build esxi60-vcenter.json
+```
 
 ## Vagrant box example
 
